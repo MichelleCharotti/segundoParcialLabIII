@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SegundoParcialCharottiMichelle</title>
+    <script src="./script/Vehiculo.js"></script>
+    <script src="./script/Auto.js"></script>
+    <script src="./script/Camioneta.js"></script>
+    <script src="./script/funciones.js"></script>
+    <link rel="stylesheet" href="./css/estilo.css">
+</head>
+<body>
+    <div class="navbar">
+        <button class="agregar" id="agregar">Alta</button>
+    </div>
+<hr>
+    <h1>Filtros</h1>
+    <hr>
+    <div class="filtros">
+            <label for="filtrar">Filtrar por: </label>
+            <select name="filtro-vehiculos" id="filtro-vehiculos">
+                <option value="Auto">Auto</option>
+                <option value="Camioneta">Camioneta</option>
+            </select>
+
+            <label for="promedio"> &nbsp  &nbsp &nbspPromedio de precio: </label>
+            <input type="text" id="promedio" name="promedioText" disabled > &nbsp
+            <input type="button" value="Calcular promedio" id = "btnPromedio" class="boton">
+        </div>
+
+    <h2>Campos mostrados</h2>Tildar los campos a mostrar
+    <hr>
+    <div class="campos">
+            <input type="checkbox" id="idOcultar" name="idFiltrado" checked>
+            <label for="idOcultar">ID</label> &nbsp &nbsp
+            <input type="checkbox" id="marcaOcultar" name="marcaFiltrado" checked>
+            <label for="marcaOcultar">Marca</label> &nbsp &nbsp
+            <input type="checkbox" id="modeloOcultar" name="modeloFiltrado" checked>
+            <label for="modeloOcultar">Modelo</label> &nbsp &nbsp
+            <input type="checkbox" id="precioOcultar" name="precioFiltrada"checked>
+            <label for="precioOcultar">Precio</label>
+    </div>
+    <hr>
+<h1>Lista de Vehiculos</h1>
+    <div class="backdrop" id="backdrop">
+        <div class="container-carga" id="container-carga">
+            <form class="form-agregar">
+                <button class="botonCerrar" type="button" id="btnCerrar">X</button>
+                <h1>Alta vehiculo</h1>
+                <br>
+                <label for="id">Id:</label>
+                <input type="text" id="id" disabled>
+                <label for="marca">Marca:</label>
+                <input type="text" id="marca">
+                <label for="modelo">Modelo:</label>
+                <input type="text" id="modelo">
+                <label for="precio">Precio:</label>
+                <input type="number" id="precio">
+                <label for="tipo">Tipo:</label>
+                <br>
+                <select id="tipo" name="tipo">
+                    <option value="" disabled selected hidden>Seleccione tipo de vehiculo</option>
+                    <option value="Auto">Auto</option>
+                    <option value="Camioneta">Camioneta</option>
+                </select>
+                <div id="selectAuto">
+                    <label for="puertas">Cantidad de puertas:</label>
+                    <input type="number" id="puertas" placeholder="Cantidad de Puertas" min="2" max="6">
+                </div>
+                <div id="selectCamioneta">
+                    <label for="cuatroXcuatro">Es 4x4?</label>
+                    <input type="checkbox" id="cuatroXcuatro">
+                </div>
+                <div class="container-botones" id="container-botones">
+                    <button class="botonCancelar" type="button" id="btnCancelar">Cancelar</button>
+                    <button class="botonAgregar" type="button" id="btnAgregar">Guardar</button>
+                </div>
+                <div class="container-modificaciones" id="container-modificaciones">
+                    <button class="botonEliminar" type="button" id="eliminar">Eliminar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <table id="tabla">
+        <thead>
+            <tr>
+                <th name="idTabla">Id</th>
+                <th name="marcaTabla">Marca</th>
+                <th name="modeloTabla">Modelo</th>
+                <th name="precioTabla">Precio</th>
+                <th name="tipoTabla">Tipo</th> <!--  -->
+                <th name="datoTabla">Detalles</th>
+                <th name="accionTabla">Accion</th>   
+            </tr>
+        </thead>
+        <tbody id="tCuerpo"></tbody>
+    </table>
+</body>
+</html>
